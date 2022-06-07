@@ -404,7 +404,7 @@ const data = [
 //User Containing 50 points
 
 let person_with_minimum_50p = data.filter(d=>d.point>=50);
-const result= person_with_minimum_50p.map(d=>({fullName:`${d.firstName} ${d.lastName}`,Company: d.company})) ;
+const result= person_with_minimum_50p.map(d=>({Point:d.point,fullName:`${d.firstName} ${d.lastName}`,Company: d.company})) ;
 console.log("================ Task 1=====================")
 console.table(result);
 
@@ -418,6 +418,11 @@ console.table(user_20_50);
 
 //task 3
 
-const search_email= data.filter(d=>d.email==="Tristian7@yahoo.com");
-console.log("============================ Person who's email is Tristian7@yahoo.com")
-console.table(search_email);
+const searchTris= data.filter(d=>d.email==='Tristian7@yahoo.com');
+const pointOfTris= searchTris.map(d=>(d.point));
+ let search_user= data.filter(d=>d.point==pointOfTris);
+ const user_with_point_77= search_user.map(d=>({Name:`${d.firstName} ${d.lastName}`,point:d.point,Email:d.email}));
+
+
+console.log(`Point of Tristian7@yahoo.com is: ${pointOfTris}`);
+console.table(user_with_point_77);
