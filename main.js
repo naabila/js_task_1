@@ -412,8 +412,10 @@ console.table(result);
 //Task 2
 
 const user_20_50= data.filter(d=>d.point>20 && d.point<50);
+const total= user_20_50.length;
 console.log("==============Task 2=======================")
-console.table(user_20_50);
+console.log(total);
+
 
 
 //task 3
